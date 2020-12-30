@@ -6,10 +6,10 @@ function createRows(){
         global $connection;
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $connection = mysqli_connect('localhost','root', '', 'users');
-        if(!$connection){
-            die("Not connected to database");
-        }
+        //Use the below mysqli function to help prevent SQL Injection 
+        $username = mysqli_real_escape_string($connection, $username);
+        $password = mysqli_real_escape_string($connection, $password);
+
         $query = "INSERT INTO users(username, password) ";
         $query .= "VALUES ('$username', '$password') ";
         $result = mysqli_query($connection, $query);
@@ -46,6 +46,9 @@ function updateTable() {
         global $connection;
         $username = $_POST['username'];
         $password = $_POST['password'];
+        //Use the below mysqli function to help prevent SQL Injection 
+        $username = mysqli_real_escape_string($connection, $username);
+        $password = mysqli_real_escape_string($connection, $password);
         $id = $_POST['id'];
         $query = "UPDATE users SET ";
         $query .= "username = '$username', ";

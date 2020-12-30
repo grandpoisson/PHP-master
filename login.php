@@ -37,18 +37,14 @@ integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69p
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text"name="username" class="form-control">
-
       </div>
-
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" name="password" class="form-control">
-
       </div>
       <input class="btn btn-primary"  type="submit" name ="submit" value="Submit"  >
     </form>
   </div>
-</div>
- 
+</div> 
 </body>
 </html>
